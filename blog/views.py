@@ -25,7 +25,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title','content']
 
-    def form_valid(self, form):                 # method used to set author to current logged user
+    def form_valid(self, form):                 # method used to set author to current logged User
         form.instance.author = self.request.user
         return super().form_valid(form)
 
